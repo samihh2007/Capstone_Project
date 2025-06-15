@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fullscreen Image</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #bg_img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    #content_img {
+      position: relative;
+      z-index: 1;
+      width: 200px; /* or any size you want */
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <img id="bg_img" src="A Hotel/2.png" alt="" />
+  
+
+  <script>
+    const bg = document.getElementById("bg_img");
+
+    function resizeBackground() {
+      bg.style.width = window.innerWidth + "px";
+      bg.style.height = window.innerHeight + "px";
+    }
+
+    // Initial sizing
+    resizeBackground();
+
+    // Update on window resize
+    window.addEventListener("resize", resizeBackground);
+  </script>
+</body>
+</html>
